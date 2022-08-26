@@ -31,6 +31,8 @@ requirements:
     - pyyaml
     - qdarkstyle
     - requests
+    - tqdm
+    - conda
 
 test:
   imports:
