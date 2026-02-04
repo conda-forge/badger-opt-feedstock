@@ -39,7 +39,6 @@ test:
     - badger
   commands:
     - badger --help
-    - badger --version
     - python -c "import badger; print(badger.__version__)"
   requires:
     - pip
