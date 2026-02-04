@@ -1,5 +1,5 @@
 {% set name = "badger-opt" %}
-{% set version = "1.4.4" %}
+{% set version = "1.5.0" %}
 {% set python_min = "3.10" %}
 
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: d902c969686314b07ce48d9a39ac94de345b2fcfe5ab245082e8bef11aba6b10
+  sha256: 97995cf0e20028cfc11dad1d541c40d30271e20694d6b41944088f3bc51b5316
 
 build:
   number: 0
@@ -32,13 +32,14 @@ requirements:
     - coolname
     - pillow
     - requests
-    - xopt >=2.6.7
+    - xopt >=2.6.11
 
 test:
   imports:
     - badger
   commands:
-    - bash -c "mkdir -p /home/conda/.config && echo 'y' | badger"
+    - badger --help
+    - python -c "import badger; print(badger.__version__)"
   requires:
     - pip
     - python {{ python_min }}
