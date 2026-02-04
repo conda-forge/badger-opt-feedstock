@@ -32,13 +32,15 @@ requirements:
     - coolname
     - pillow
     - requests
-    - xopt >=2.6.7
+    - xopt >=2.6.11
 
 test:
   imports:
     - badger
   commands:
-    - bash -c "mkdir -p /home/conda/.config && echo 'y' | badger"
+    - badger --help
+    - badger --version
+    - python -c "import badger; print(badger.__version__)"
   requires:
     - pip
     - python {{ python_min }}
